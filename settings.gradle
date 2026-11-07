@@ -1,0 +1,3 @@
+// settings.gradle - 프로젝트 이름을 정합니다.
+// 이 이름이 build/libs 아래 산출물 파일 이름 등에 쓰입니다.
+rootProject.name = 'starter'

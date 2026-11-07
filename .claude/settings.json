@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(~/team/tell.sh:*)",
+      "Bash(/home/ksm/team/tell.sh:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(mkdir:*)",
+      "Bash(python3 -m pytest:*)",
+      "Bash(python3 -m unittest:*)",
+      "Bash(python3 src/:*)",
+      "Bash(npm test:*)"
+    ]
+  }
+}

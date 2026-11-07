@@ -1,0 +1,33 @@
+# ============================================================
+# application.yml - 애플리케이션 설정 파일
+# Spring Boot가 시작될 때 이 파일을 읽어서 DB 연결, JPA 동작, 우리가 만든 app.* 값을 정합니다.
+# 들여쓰기(스페이스 2칸)가 구조를 뜻하므로 탭 문자를 쓰면 안 됩니다.
+# ============================================================
+
+spring:
+  application:
+    # 애플리케이션 이름 (로그나 모니터링에 표시됩니다)
+    name: starter
+
+  datasource:
+    # [실습용 H2 설정입니다. 운영 환경에서 사용 금지] sa 계정과 빈 비밀번호는 설치 없이 바로 돌리기 위한 값입니다.
+    # DB 접속 주소. H2 메모리 DB는 'mem:starter' 이름으로 프로그램이 도는 동안만 존재합니다.
+    # 나중에 MySQL로 바꾸는 방법은 docs/spring-starter-steps.md 의 "DB 바꾸기" 절을 보세요.
+    # 실제 DB를 쓸 때는 비밀번호를 파일에 적지 말고 환경변수(예: ${DB_PASSWORD})로 받습니다.
+    url: jdbc:h2:mem:starter
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      # create-drop: 시작할 때 테이블을 새로 만들고, 종료할 때 지웁니다.
+      # 실습용 설정입니다. 실제 서비스에서는 데이터가 사라지므로 쓰면 안 됩니다.
+      ddl-auto: create-drop
+    # open-in-view: 웹 요청이 끝날 때까지 DB 연결을 붙잡아 두는 기능입니다.
+    # 초보자가 "지연 로딩" 문제를 뒤늦게 만나지 않도록 끕니다. (서비스 계층에서 필요한 데이터를 다 읽어 옵니다)
+    open-in-view: false
+    show-sql: false
+
+# app.* 는 우리가 직접 정한 설정입니다. AppProperties 클래스가 이 값을 읽어 옵니다.
+app:
+  name: starter
