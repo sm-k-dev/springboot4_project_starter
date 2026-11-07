@@ -3,6 +3,8 @@ build/
 .gradle/
 out/
 bin/
+*.class
+# 주의: gradle/wrapper/gradle-wrapper.jar 는 반드시 커밋해야 하므로 *.jar 를 쓰지 않습니다.
 
 # ----- IDE 설정 파일 (개인 PC 설정이라 공유하지 않습니다) -----
 .idea/
@@ -11,6 +13,7 @@ bin/
 .settings/
 .project
 .classpath
+.factorypath
 
 # ----- 운영체제 파일 -----
 .DS_Store
@@ -18,7 +21,8 @@ Thumbs.db
 
 # ----- 로그 -----
 *.log
+logs/
 
-# ----- Python 캐시 (테스트 실행 때 자동 생성) -----
-__pycache__/
-.pytest_cache/
+# ----- 비밀 값 (비밀번호·토큰은 파일에 적지 말고 환경변수로 받습니다) -----
+.env
+*.env.local
