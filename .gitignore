@@ -31,3 +31,6 @@ __pycache__/
 # ----- 비밀 값 (비밀번호·토큰은 파일에 적지 말고 환경변수로 받습니다) -----
 .env
 *.env.local
+
+# ----- Claude Code 개인 설정 (PC마다 다르므로 공유하지 않습니다) -----
+.claude/settings.local.json
